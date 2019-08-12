@@ -1,8 +1,11 @@
-<html>
-<head>
-    <title>Base App</title>
-</head>
-<body>
-    
-</body>
-</html>
+<div>
+    <h1>
+        Lista osob
+    </h1>
+</div>
+
+{% for o in osoby %}
+<div>
+    {{ o }}
+</div>
+{% endfor%}
