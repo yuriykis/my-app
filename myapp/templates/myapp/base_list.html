@@ -6,6 +6,10 @@
 
 {% for o in osoby %}
 <div>
-    {{ o }}
+    <b>Imie: </b> {{ o.imie }}
+    <b>Nazwisko: </b> {{ o.nazwisko }}
+    <h1>
+        <a href="{% url 'entity_detail' pk=o.pk %}">{{o}}</a>
+    </h1>
 </div>
 {% endfor%}
