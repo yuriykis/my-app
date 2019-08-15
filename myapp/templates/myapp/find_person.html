@@ -1,0 +1,7 @@
+<h2>Szukaj osobe</h2>
+<form method="POST" class="post-form">
+    {% csrf_token %}
+    {{ form_f.as_p }}
+    <button type="submit" class="save btn btn-default">Search</button>
+</form>
+<a href="{% url 'base_list' %}">Wroc</a>

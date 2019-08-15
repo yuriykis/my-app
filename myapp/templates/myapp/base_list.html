@@ -10,6 +10,9 @@
     <p>
         <a href="{% url 'osoba_edit' pk=o.pk %}">Edytuj</a>
         <a href="{% url 'osoba_delete' pk=o.pk %}">Usun</a>
+        <a href="{% url 'add_os_tel' pk=o.pk %}">Dodaj telefon</a>
+        <br/>
+        <a href="{% url 'add_os_mail' pk=o.pk %}">Dodaj adres email</a>
     </p>
 </div>
 {% endfor %}

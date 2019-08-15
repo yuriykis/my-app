@@ -1,3 +1,21 @@
 <b>Imie: </b> {{ osoba.imie }}
-<br/>
+<br />
 <b>Nazwisko: </b> {{ osoba.nazwisko }}
+<br />
+<b>Numery telefonow:</b>
+{% if osoba.telefon_set.all %}
+ {% for t in osoba.telefon_set.all %}
+<p>{{t}}</p>
+ {% endfor %}
+{% else %}
+<p>Brak numerow</p>
+{% endif %}
+<b>Adresy email:</b>
+{% if osoba.email_set.all %}
+ {% for m in osoba.email_set.all %}
+<p>{{m}}</p>
+ {% endfor %}
+{% else %}
+<p>Brak adresow email</p>
+{% endif %}
+<a href="{% url 'base_list' %}">Wroc</a>
