@@ -1,20 +1,19 @@
-<div>
-    <h1>
-        Lista osob
-    </h1>
-</div>
+{% extends 'myapp/base.html' %}
 
+{% block content %}
+{% if osoby %}
 {% for o in osoby %}
 <div>
-    <b>Imie: </b> {{ o.imie }}
-    <b>Nazwisko: </b> {{ o.nazwisko }}
-    <h1>
+    <h4>
         <a href="{% url 'entity_detail' pk=o.pk %}">{{o}}</a>
+    </h4>
+    <p>
         <a href="{% url 'osoba_edit' pk=o.pk %}">Edytuj</a>
         <a href="{% url 'osoba_delete' pk=o.pk %}">Usun</a>
-    </h1>
+    </p>
 </div>
-{% endfor%}
-<div>
-    <a href="{% url 'osoba_new' %}"> <b>Dodaj osobe</b> </a>
-</div>
+{% endfor %}
+{% else %}
+    Brak osob w bazie
+{% endif %}
+{% endblock %}

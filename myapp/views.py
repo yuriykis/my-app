@@ -18,7 +18,7 @@ def osoba_new(request):
         if form.is_valid():
             osoba = form.save()
             osoba.save()
-            return redirect('entity_detail', pk=osoba.pk)
+            return redirect('base_list')
     else:
         form = Osoba_add()
     return render(request, 'myapp/osoba_edit.html', {'form': form})
@@ -30,7 +30,7 @@ def osoba_edit(request, pk):
         if form.is_valid():
             osoba = form.save()
             osoba.save()
-            return redirect('entity_detail', pk=osoba.pk)
+            return redirect('base_list')
     else:
        form=Osoba_add(instance=osoba)
     return render(request, 'myapp/osoba_edit.html', {'form': form})
@@ -40,5 +40,5 @@ def osoba_delete(request, pk):
     osoba = get_object_or_404(Osoba, pk=pk)
     osoba.delete()
     osoby = Osoba.objects.all()
-    return render(request, 'myapp/base_list.html', {'osoby': osoby})
+    return redirect('base_list')
 
