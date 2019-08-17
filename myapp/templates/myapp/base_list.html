@@ -1,6 +1,7 @@
 {% extends 'myapp/base.html' %}
 
 {% block content %}
+
 <div>
     <h2>
         Lista osob
@@ -8,7 +9,7 @@
 </div>
 {% if osoby %}
 {% for o in osoby %}
-<div>
+<div class="box">
     <h4>
         <a href="{% url 'entity_detail' pk=o.pk %}">{{o}}</a>
     </h4>
