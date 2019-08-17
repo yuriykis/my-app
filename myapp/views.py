@@ -73,13 +73,22 @@ def osoba_delete(request, pk):
 def osoba_szukaj(request):
     if request.method == "POST":
         form_f = Find_person(request.POST)
-        imie = form_f['imie'].value()
-        nazwisko = form_f['nazwisko'].value()
-        telefon = form_f['telefon'].value()
-        email = form_f['email'].value()
+        all_persons = Osoba.objects.all()
 
-        all_persons = Osoba.obects.all()
+        if form_f['imie'].value():
+            imie = form_f['imie'].value()
+            all_persons = all_persons.filter(imie = imie)
+        if form_f['nazwisko'].value():
+            nazwisko = form_f['nazwisko'].value()
+            all_persons = all_persons.filter(nazwisko = nazwisko)
+        if form_f['telefon'].value():
+           telefon = form_f['telefon'].value()
+           all_persons = all_persons.filter(telefon__telefon=telefon)
+        if form_f['email'].value():
+           email = form_f['email'].value()
+           all_persons = all_persons.filter(email__email=email)
         
+        return render(request, 'myapp/base_list.html', {'osoby': all_persons})
 
     else:
         form_f = Find_person()

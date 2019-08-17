@@ -1,3 +1,9 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+<br />
+
+<h2>Szczegolowe dane osoby</h2>
 <b>Imie: </b> {{ osoba.imie }}
 <br />
 <b>Nazwisko: </b> {{ osoba.nazwisko }}
@@ -19,3 +25,5 @@
 <p>Brak adresow email</p>
 {% endif %}
 <a href="{% url 'base_list' %}">Wroc</a>
+
+{% endblock %}

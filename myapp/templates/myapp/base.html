@@ -6,11 +6,9 @@
 <body>
     <div>
         <h1>
-            Lista osob
+            <a href="{% url 'base_list' %}">Ksiazka telefoniczna</a>
         </h1>
     </div>
-    {% block content %}
-    {% endblock %}
     <div>
         <br />
         <a href="{% url 'osoba_new' %}"> <b>Dodaj osobe</b> </a>
@@ -18,5 +16,7 @@
     <div>
         <a href="{% url 'osoba_szukaj' %}"><b>Szukaj osobe</b></a>
     </div>
+    {% block content %}
+    {% endblock %}
 </body>
 </html>
