@@ -2,8 +2,16 @@ from django.shortcuts import render, get_object_or_404
 from .models import Osoba
 from .forms import Osoba_add, Telefon_add, Email_add, Find_person
 from django.shortcuts import redirect
+from django.views import generic
 
 # Create your views here.
+
+class BaseView(generic.ListView):
+    template_name = 'myapp/base_list.html'
+    context_object_name = 'osoby'
+    def get_queryset(self):
+        return Osoba.objects.all()
+
 def base_list(request):
     osoby = Osoba.objects.all()
     return render(request, 'myapp/base_list.html', {'osoby': osoby})

@@ -2,21 +2,24 @@
 <html>
 <head>
     <link rel="stylesheet" href="{% static 'css/myapp.css' %}">
+    <script src="{% static 'js/timer.js' %}"></script>
 </head>
-<body>
-    <div>
+<body onload="changeTime();">
+    <div id="title">
         <h1>
             <a href="{% url 'base_list' %}">Ksiazka telefoniczna</a>
         </h1>
     </div>
     <div>
-        <br />
         <a href="{% url 'osoba_new' %}"> <b>Dodaj osobe</b> </a>
     </div>
     <div>
         <a href="{% url 'osoba_szukaj' %}"><b>Szukaj osobe</b></a>
     </div>
+
     {% block content %}
     {% endblock %}
+    <br />
+    <div id="timer"></div>
 </body>
 </html>

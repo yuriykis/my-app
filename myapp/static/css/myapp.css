@@ -1,3 +1,9 @@
+body{
+    
+}
+#title{
+   
+}
 a:link{
     color:black;
     text-decoration:none;
@@ -6,6 +12,8 @@ a:link{
 p a:link, p a:visited{
     color: red;
 }
+
+
 a:visited{
     color:black;
     text-decoration:none;
