@@ -5,21 +5,35 @@
     <script src="{% static 'js/timer.js' %}"></script>
 </head>
 <body onload="changeTime();">
-    <div id="title">
-        <h1>
-            <a href="{% url 'base_list' %}">Ksiazka telefoniczna</a>
-        </h1>
-    </div>
-    <div>
-        <a href="{% url 'osoba_new' %}"> <b>Dodaj osobe</b> </a>
-    </div>
-    <div>
-        <a href="{% url 'osoba_szukaj' %}"><b>Szukaj osobe</b></a>
-    </div>
+    <div id="main_container">
+        <div id="title">
+            <h1>
+                <a href="{% url 'base_list' %}">Ksiazka telefoniczna</a>
+            </h1>
+        </div>
 
-    {% block content %}
-    {% endblock %}
+        <div id="menu">
+            <div id="button">
+                <a href="{% url 'osoba_new' %}"> <b>Dodaj osobe</b> </a>
+            </div>
+
+            <div id="button">
+                <a href="{% url 'osoba_szukaj' %}"><b>Szukaj osobe</b></a>
+            </div>
+
+        </div>
+
+        <div id="content">
+        {% block content %}
+        {% endblock %}
+         </div>
     <br />
-    <div id="timer"></div>
+    <div id="footer">
+        <div id="timer"></div>
+        <div id="info">
+            
+        </div>
+    </div>
+    </div>
 </body>
 </html>
